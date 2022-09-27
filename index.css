@@ -1,0 +1,164 @@
+.hero{
+    width:100%;
+    height:100vh;
+    position:relative;
+    padding:1em;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+
+nav{
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    padding:1em;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .logo{
+    width:60%;
+}
+
+nav .logo:hover{
+    cursor:pointer;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li a{
+    display:inline-block;
+    margin:0.4rem;
+    text-decoration:none;
+    color:#fff;
+    transition:padding 0.2s;
+}
+
+nav ul li a:hover{
+    color:yellowgreen;
+    padding:0 0.6em;
+}
+
+nav .open-menu{
+    font-size:2rem;
+    margin:1.2rem;
+    display:none;
+    cursor:pointer;
+}
+
+nav ul .close-menu{
+    font-size:2rem;
+    display:none;
+    cursor:pointer;
+}
+
+.title{
+    text-align: center;
+}
+
+.title h1{
+    font-size:6rem;
+    color:#fff;
+    font-weight:600;
+    transition:0.5s;
+}
+
+.title h1:hover{
+    -webkit-text-stroke: 0.1px #fff;
+    color:transparent;
+}
+
+.title a{
+    text-decoration: none;
+    display:inline-block;
+    color:#fff;
+    font-size:1.3rem;
+    border: 2px solid #fff;
+    padding: 0.4em 1em;
+    border-radius:1em;
+    transition: padding 0.5s;
+}
+
+.title a:hover{
+    color:black;
+    border:solid black;
+    padding:0.5em 1.8em;
+}
+.back-video{
+    position:absolute;
+    right:0;
+    bottom:0;
+    z-index:-1;
+}
+
+@media screen and (min-aspect-ratio:16/9){
+    .back-video{
+        width:100%;
+        height:auto
+    }
+}
+
+@media screen and (max-aspect-ratio:16/9){
+    .back-video{
+        width:auto;
+        height:100%
+    }
+}
+
+@media screen and (max-width:768px){
+    .title h1{
+        font-size:2rem;
+    }
+
+    .title a{
+        font-size:0.8rem;
+    }
+
+    nav{
+        display:flex;
+        justify-content: space-between;
+        padding:0.6rem;
+    }
+
+    nav .logo{
+        width:60%;
+    }
+
+    nav ul{
+        height:100vh;
+        position:fixed;
+        top:0;
+        right:0;
+        left:0;
+        z-index:10;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        transition: top 1s ease 0.1s;
+        display:none;
+        background:hsl(0 0% 100% / 0.1);
+        backdrop-filter: blur(1rem);
+    }
+
+    nav ul .close-menu{
+        display:block;
+        position:absolute;
+        top:1.2rem;
+        right:1.2rem;
+        color:#fff;
+    }
+
+    nav .open-menu{
+        display:inline-block;
+        justify-content: center;
+        margin:0;
+        color:#fff;
+    }
+}
+
